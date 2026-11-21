@@ -1,5 +1,6 @@
 package at.htlleonding.articlemgt;
 
+import htl.Billa.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -105,7 +106,7 @@ class ArticleRepositoryTest {
         assertEquals(true, billaPlusPlus.addArticle(pasta));
         assertEquals(true, billaPlusPlus.addArticle(pils));
 
-        List<FoodArticle> foodArticles = billaPlusPlus.getFoodWithoutAllergens(new AllergenType[] {AllergenType.A, AllergenType.R});
+        List<Article> foodArticles = billaPlusPlus.getFoodWithoutAllergens(new AllergenType[] {AllergenType.A, AllergenType.R});
         assertEquals(1,foodArticles.size());
         assertEquals(peas,foodArticles.get(0));
 

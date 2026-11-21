@@ -1,5 +1,6 @@
 package at.htlleonding.articlemgt;
 
+import htl.Billa.TechArticle;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

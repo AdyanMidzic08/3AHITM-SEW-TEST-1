@@ -1,5 +1,6 @@
-package at.htlleonding.articlemgt;
+package htl.Billa;
 
+import htl.Billa.Article;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Modifier;
