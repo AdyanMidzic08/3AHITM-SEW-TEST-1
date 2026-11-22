@@ -1,5 +1,8 @@
 package htl.Billa;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class ArticleRepository {
@@ -52,8 +55,8 @@ public class ArticleRepository {
         return articleWithQuantityBelowList;
     }
 
-    public List<Article> getFoodWithoutAllergens(AllergenType[] allergenTypes) {
-        List<Article> foodWithoutAllergensList = new LinkedList<>();
+    public List<FoodArticle> getFoodWithoutAllergens(AllergenType[] allergenTypes) {
+        List<FoodArticle> foodWithoutAllergensList = new LinkedList<>();
 
 
         for(Article article: articles.values()) {
@@ -83,5 +86,19 @@ public class ArticleRepository {
         }
 
         return techArticle;
+    }
+
+    public void addArticlesFromFile(String path, ArticleFactory factory) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            reader.readLine();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (!line.isBlank()) {
+                    addArticle(factory.createFromString(line));
+                }
+            }
+        } catch (IOException e) {
+            throw new ArticleManagementException("Exception occured while loading file!", e);
+        }
     }
 }

@@ -18,9 +18,4 @@ public class TechArticle extends Article {
         }
         this.warrantyMonths = warrantyMonths;
     }
-
-    @Override
-    public String toString() {
-        return String.format("#%d %s (%d in stock)",getBarcode(),getName(),getQuantity());
-    }
 }

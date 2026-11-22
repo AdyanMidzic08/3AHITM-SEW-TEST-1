@@ -66,6 +66,11 @@ public abstract class Article implements Comparable<Article> {
         return Objects.hashCode(name);
     }
 
+    @Override
+    public String toString() {
+        return String.format("#%d %s (%d in stock)", barcode, name, quantity);
+    }
+
     public void restock(int restockItems) {
         if(restockItems < 0) {
             throw new IllegalArgumentException();

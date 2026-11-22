@@ -106,7 +106,7 @@ class ArticleRepositoryTest {
         assertEquals(true, billaPlusPlus.addArticle(pasta));
         assertEquals(true, billaPlusPlus.addArticle(pils));
 
-        List<Article> foodArticles = billaPlusPlus.getFoodWithoutAllergens(new AllergenType[] {AllergenType.A, AllergenType.R});
+        List<FoodArticle> foodArticles = billaPlusPlus.getFoodWithoutAllergens(new AllergenType[] {AllergenType.A, AllergenType.R});
         assertEquals(1,foodArticles.size());
         assertEquals(peas,foodArticles.get(0));
 
